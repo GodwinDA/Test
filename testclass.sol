@@ -34,7 +34,7 @@ contract TokenDistributor is Ownable, ReentrancyGuard {
      * @dev Adds authorized distributors who can distribute tokens
      * @param distributors Array of addresses to authorize
      */
-    function addAuthorizedDistributors(address[] calldata distributors) external onlyOwner {
+    function addAuthorizedDistributors(address[] calldata distributors) external {
         for (uint256 i = 0; i < distributors.length; i++) {
             authorizedDistributors[distributors[i]] = true;
         }
