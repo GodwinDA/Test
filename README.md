@@ -1,4 +1,4 @@
-Protocol Description
+# Protocol Description
 
 Marcus and his 15 colleagues are esports enthusiasts who decided to watch a gaming tournament together. Marcus found a venue with 30-person capacity for viewing parties. To enhance engagement and cover venue costs, Marcus organizes outcome forecasting for tournament rounds, inviting up to 14 additional participants.
 
