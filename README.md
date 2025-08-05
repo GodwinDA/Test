@@ -53,7 +53,7 @@ After round 9 results, Competitors claim rewards if:
 
 Prize pool distributed proportionally among positive-point Competitors. If all Competitors have negative points, everyone receives registration cost refund.
 
-## Contracts
+## Contracts in scope
 
 ### GameRegistry.sol
 
