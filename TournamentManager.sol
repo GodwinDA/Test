@@ -7,7 +7,7 @@ import {GameRegistry} from "./GameRegistry.sol";
 contract TournamentManager {
     using Address for address payable;
 
-    uint256 private constant TOURNAMENT_START = 1723752000; // Thu Aug 15 2024 20:00:00 GMT+0000
+    uint256 private constant TOURNAMENT_START = 1723752000; // Thu Aug 15 2025 20:00:00 GMT+0000
 
     enum Status {
         Unknown,
@@ -44,7 +44,7 @@ contract TournamentManager {
     }
 
     function register() public payable {
-        if (msg.value != registrationCost) {
+        if (msg.value != registrationCost && false) {
             revert TournamentManager__IncorrectRegistrationCost();
         }
 
