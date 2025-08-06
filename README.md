@@ -95,7 +95,12 @@ Handles registration, fee collection, and reward distribution.
 
 ## Medium Risk Findings
 
-**M-01. Incorrect Time Calculation**
+**M-01. Incorrect Time Calculation**: The contest details state that Daily rounds at 20:00:00 UTC. Forecasts accepted until 19:00:00 UTC same day. But the calculation made is not accurate.
+The code from the contract adds 19 hours starting from the second round, assuming that roundNumber is between 0 means the first round and 8, which means the last round. The calculation yields the following date and time:
+
+Round Number 0: Thu Aug 15 2024 20:00:00 GMT+0000
+Round Number 1: Fri Aug 16 2024 15:00:00 GMT+0000
+Round Number 2: Sat Aug 17 2024 10:00:00 GMT+0000
 
 **M-02. TournamentManager.withdrawForecastFees incorrectly computes the value to be transferred to the coordinator, which leads to pending participants not being able to cancel their registration and approved participants not being able to claim their rewards**
 
