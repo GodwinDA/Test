@@ -76,3 +76,32 @@ Handles registration, fee collection, and reward distribution.
 - `submitForecast`: Competitors pay forecast fee and record predictions
 - `withdrawForecastFees`: Coordinator withdraws forecast fees
 - `claimReward`: Competitors withdraw prize pool rewards
+
+
+
+# Security Issues - Tournament Manager Protocol
+
+## High Risk Findings
+
+**H-01. `TournamentManager::submitForecast` has no access controls and any unapproved participant can make forecasts causing an incorrect calculation and distribution of rewards**
+
+**H-02. `GameRegistry::setForecast` Has No Access Control, Allowing Unauthorised Modifications and Score Manipulation to any Participant Forecasts**
+
+**H-03. Reentrancy attack in the `TournamentManager::cancelRegistration` function allows entrant to drain contract balance.**
+
+**H-04. Participant can only withdraw if they make two or more forecasts instead of one**
+
+**H-05. `TournamentManager.claimReward` combined with `GameRegistry.setForecast` allows a participant to withdraw rewards multiple times leading to a drain of funds in the contract**
+
+## Medium Risk Findings
+
+**M-01. Incorrect Time Calculation**
+
+**M-02. TournamentManager.withdrawForecastFees incorrectly computes the value to be transferred to the coordinator, which leads to pending participants not being able to cancel their registration and approved participants not being able to claim their rewards**
+
+**M-03. Not accounting for a possible score of 0 in `TournamentManager::claimReward` will lead to stuck funds**
+
+## Low Risk Findings
+**L-01. 1754164800 is the correct time for uint256 private constant TOURNAMENT_START = 1723752000; // Thu Aug 15 2025 20:00:00 GMT+0000**
+
+**L-02. Small amount of funds can remain stuck in contract due to precision loss**
