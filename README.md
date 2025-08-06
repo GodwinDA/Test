@@ -93,7 +93,7 @@ Handles registration, fee collection, and reward distribution.
 
 **H-05. `TournamentManager.claimReward` combined with `GameRegistry.setForecast` allows a participant to withdraw rewards multiple times leading to a drain of funds in the contract**
 
-**H-05. In the register() function, the condition msg.value != registrationCost && false will always evaluate to false because of the && false. This means the check for the correct registration fee is effectively disabled. Anyone can register without sending the required registrationCost, which could lead to a loss of funds for the tournament prize pool.**
+**H-06. In the register() function, the condition msg.value != registrationCost && false will always evaluate to false because of the && false. This means the check for the correct registration fee is effectively disabled. Anyone can register without sending the required registrationCost, which could lead to a loss of funds for the tournament prize pool.**
 
 ## Medium Risk Findings
 
